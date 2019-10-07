@@ -38,14 +38,14 @@ void VRCLoader::Setup() {
 	// Load C++
 	if (!FileUtils::dirExists("CPPMods"))
 		CreateDirectory("CPPMods", NULL);
-	for (const auto& file : std::experimental::filesystem::directory_iterator("CPPMods"))
+	for (const auto& file : std::filesystem::directory_iterator("CPPMods"))
 		if (file.path().extension() == std::string(".dll"))
 			InjectCPPAssembly(file.path().c_str());
 
 	// Load C#
 	if (!FileUtils::dirExists("NETMods"))
 		CreateDirectory("NETMods", NULL);
-	for (const auto& file : std::experimental::filesystem::directory_iterator("NETMods"))
+	for (const auto& file : std::filesystem::directory_iterator("NETMods"))
 		if (file.path().extension() == std::string(".dll"))
 			InjectNETAssembly(file.path().c_str());
 }

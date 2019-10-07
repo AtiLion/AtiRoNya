@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "winmm", "winmm\winmm.vcxproj", "{5D18472B-23F1-4142-9478-C0A441CF0489}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "winmm64", "winmm64\winmm64.vcxproj", "{4A01315C-109C-469A-97DD-F9BD8A6DDED9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestNet", "TestNet\TestNet.csproj", "{77936EB4-706C-4616-A375-0973CA2E0D5E}"
@@ -21,14 +19,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5D18472B-23F1-4142-9478-C0A441CF0489}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{5D18472B-23F1-4142-9478-C0A441CF0489}.Debug|x64.ActiveCfg = Debug|Win32
-		{5D18472B-23F1-4142-9478-C0A441CF0489}.Debug|x86.ActiveCfg = Debug|Win32
-		{5D18472B-23F1-4142-9478-C0A441CF0489}.Debug|x86.Build.0 = Debug|Win32
-		{5D18472B-23F1-4142-9478-C0A441CF0489}.Release|Any CPU.ActiveCfg = Release|Win32
-		{5D18472B-23F1-4142-9478-C0A441CF0489}.Release|x64.ActiveCfg = Release|Win32
-		{5D18472B-23F1-4142-9478-C0A441CF0489}.Release|x86.ActiveCfg = Release|Win32
-		{5D18472B-23F1-4142-9478-C0A441CF0489}.Release|x86.Build.0 = Release|Win32
 		{4A01315C-109C-469A-97DD-F9BD8A6DDED9}.Debug|Any CPU.ActiveCfg = Debug|x64
 		{4A01315C-109C-469A-97DD-F9BD8A6DDED9}.Debug|x64.ActiveCfg = Debug|x64
 		{4A01315C-109C-469A-97DD-F9BD8A6DDED9}.Debug|x64.Build.0 = Debug|x64
