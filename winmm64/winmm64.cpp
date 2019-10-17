@@ -1,4 +1,4 @@
-#include "VRCLoader.h"
+#include "InternalHelpers.hpp"
 
 typedef FARPROC(*GetProcAddress_t)(HMODULE hModule, LPCSTR lpProcName);
 
@@ -16,7 +16,7 @@ BOOL WINAPI DllMain( HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved ) {
 
 		// Get winmm
 		if (GetWindowsDirectory(cPath, MAX_PATH) == 0) {
-			MessageBox(NULL, "Failed to setup proper Windows path!", "VRCUnlocked", MB_ICONERROR | MB_OK);
+			MessageBox(NULL, "Failed to setup proper Windows path!", "AtiRoNya", MB_ICONERROR | MB_OK);
 			return FALSE;
 		}
 		std::string strPath = std::string(cPath);
@@ -25,7 +25,7 @@ BOOL WINAPI DllMain( HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved ) {
 		// Setup winmm
 		winmmDll = LoadLibrary(strPath.c_str());
 		if (!winmmDll) {
-			MessageBox(NULL, "Failed to load winmm.dll!", "VRCUnlocked", MB_ICONERROR | MB_OK);
+			MessageBox(NULL, "Failed to load winmm.dll!", "AtiRoNya", MB_ICONERROR | MB_OK);
 			return FALSE;
 		}
 		// Proxy winmm functions
@@ -41,10 +41,12 @@ BOOL WINAPI DllMain( HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved ) {
 			ConsoleUtils::CreateConsole();
 
 		// Setup VRCLoader
-		Init_Loader();
+		if (FileUtils::fileExists("AtiRoNya.dll"))
+			LoadLibrary("AtiRoNya.dll");
+		else
+			ConsoleUtils::Log("Failed to find AtiRoNya.dll");
 	}
 	else if (fdwReason == DLL_PROCESS_DETACH) {
-		Destroy_Loader();
 		FreeLibrary(selfDll);
 	}
 	return TRUE;

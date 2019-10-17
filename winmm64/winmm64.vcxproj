@@ -65,7 +65,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>winmm64.def</ModuleDefinitionFile>
-      <AdditionalDependencies>libMinHook-x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -87,9 +87,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CLRHost.cpp" />
-    <ClCompile Include="il2cpp.cpp" />
-    <ClCompile Include="VRCLoader.cpp" />
     <ClCompile Include="winmm64.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -99,12 +96,7 @@
     </MASM>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CLRHost.h" />
-    <ClInclude Include="HookTypes.h" />
     <ClInclude Include="InternalHelpers.hpp" />
-    <ClInclude Include="il2cpp.h" />
-    <ClInclude Include="MinHook.h" />
-    <ClInclude Include="VRCLoader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
