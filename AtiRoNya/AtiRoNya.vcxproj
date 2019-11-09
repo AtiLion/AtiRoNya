@@ -45,11 +45,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Output\$(Configuration)\$(Platform)\</OutDir>
+    <OutDir>$(SolutionDir)Output\$(Configuration)\$(Platform)\AtiRoNya\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Output\$(Configuration)\$(Platform)\</OutDir>
+    <OutDir>$(SolutionDir)Output\$(Configuration)\$(Platform)\AtiRoNya\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -93,6 +93,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CLRHost.cpp" />
+    <ClCompile Include="ExportController.cpp" />
+    <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="il2cpp.cpp" />
     <ClCompile Include="VRCLoader.cpp" />
   </ItemGroup>
@@ -102,9 +104,12 @@
     <ClInclude Include="detours\detver.h" />
     <ClInclude Include="detours\syelog.h" />
     <ClInclude Include="Exports.h" />
+    <ClInclude Include="FileManager.h" />
     <ClInclude Include="HookTypes.h" />
     <ClInclude Include="il2cpp.h" />
+    <ClInclude Include="INetDomain.h" />
     <ClInclude Include="InternalHelpers.hpp" />
+    <ClInclude Include="NetHostControl.hpp" />
     <ClInclude Include="VRCLoader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

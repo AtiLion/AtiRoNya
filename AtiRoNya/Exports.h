@@ -4,11 +4,13 @@
 
 extern "C" {
 	__declspec(dllexport) IL2CPPDomain* __stdcall atironya_get_domain();
-	__declspec(dllexport) IL2CPPImage* __stdcall atironya_get_assembly(const char* name);
-	__declspec(dllexport) IL2CPPClass* __stdcall atironya_get_class(const char* name_space, const char* name, IL2CPPImage* assembly);
-	__declspec(dllexport) IL2CPPMethod* __stdcall atironya_get_method(const char* name, IL2CPPClass* klass, int paramcount = 0);
-	__declspec(dllexport) IL2CPPObject* __stdcall atironya_execute(IL2CPPMethod* method, void* obj, void** params);
 
-	__declspec(dllexport) IL2CPPString* __stdcall atironya_tostring(const char* text);
-	__declspec(dllexport) void* __stdcall atironya_from_mono(IL2CPPObject* obj);
+	__declspec(dllexport) IL2CPPImage* __stdcall atironya_get_assembly(const char* name);
+
+	__declspec(dllexport) IL2CPPArray* __stdcall atironya_box_array(void** _array, IL2CPPClass* type, size_t objectSize, int length);
+	__declspec(dllexport) void** __stdcall atironya_unbox_array(IL2CPPArray* _array, size_t objectSize);
+
+	__declspec(dllexport) void __stdcall atironya_wait_for_game(void (__stdcall *callback)());
+
+	__declspec(dllexport) IL2CPPMethodPointer __stdcall atironya_override(IL2CPPMethod* method, IL2CPPMethodPointer newMethod);
 }

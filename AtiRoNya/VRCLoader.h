@@ -14,24 +14,23 @@ public:
 	static HMODULE hGameAssembly;
 	static IL2CPPDomain* mdIL2CPPDomain;
 
+	static bool bLoadedMods;
+
+	static std::queue<std::function<void()>> qOnGameLoad;
+
 	static void Setup();
 	static void LoadAssemblies();
 
-	static bool InjectCPPAssembly(const wchar_t* file);
-	static bool InjectNETAssembly(const wchar_t* file);
+	static void LoadCPPAssembly(const wchar_t* file);
+	static void LoadNETAssembly(const char* file);
+	static void RunNETAssembly(const char* file);
 };
 
 class Hooking {
-private:
+public:
 	static LoadLibraryW_t fnLoadLibraryW;
 	static HMODULE __stdcall _LoadLibraryW(LPCWSTR lpLibFileName);
 
 	static il2cpp_init_t fnil2cpp_init;
 	static IL2CPPDomain* _il2cpp_init(const char* name);
-public:
-	static bool HookLoadLibrary();
-	static bool UnHookLoadLibrary();
-
-	static bool HookIL2CPP(HMODULE hGameAssembly);
-	static bool UnHookIL2CPP();
 };

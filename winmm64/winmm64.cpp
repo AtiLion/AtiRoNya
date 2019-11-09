@@ -37,12 +37,20 @@ BOOL WINAPI DllMain( HINSTANCE hinstDLL, DWORD fdwReason, LPVOID lpvReserved ) {
 			return TRUE;
 
 		// Console
+#if _DEBUG
+		ConsoleUtils::CreateConsole();
+#else
 		if (strstr(GetCommandLine(), "--debug-console") != NULL)
 			ConsoleUtils::CreateConsole();
+#endif
 
 		// Setup VRCLoader
-		if (FileUtils::fileExists("AtiRoNya.dll"))
-			LoadLibrary("AtiRoNya.dll");
+		if (!FileUtils::dirExists("AtiRoNya")) {
+			ConsoleUtils::Log("Failed to find AtiRoNya directory");
+			return FALSE;
+		}
+		if (FileUtils::fileExists("AtiRoNya\\AtiRoNya.dll"))
+			LoadLibrary("AtiRoNya\\AtiRoNya.dll");
 		else
 			ConsoleUtils::Log("Failed to find AtiRoNya.dll");
 	}
