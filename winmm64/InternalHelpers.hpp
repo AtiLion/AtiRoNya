@@ -48,7 +48,7 @@ public:
 
 		// Setup outputs
 		freopen_s(reinterpret_cast<FILE * *>(stdout), "CONOUT$", "w", stdout);
-		SetConsoleTitle("VRCLoader Debug Console");
+		SetConsoleTitle("AtiRoNya Debug Console");
 	}
 	static void DestroyConsole() {
 		if (!HasConsole())

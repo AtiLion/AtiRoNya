@@ -12,7 +12,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{D51D3ECF-898D-43F0-A9D8-B1E8A883B2CE}</ProjectGuid>
+    <ProjectGuid>{134A1B11-CDA8-4408-BFE9-3AAB80FBF227}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>AtiRoNya</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
@@ -45,11 +45,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Output\$(Configuration)\$(Platform)\AtiRoNya\</OutDir>
+    <OutDir>$(SolutionDir)Output\$(Configuration)\$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Output\$(Configuration)\$(Platform)\AtiRoNya\</OutDir>
+    <OutDir>$(SolutionDir)Output\$(Configuration)\$(Platform)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -66,7 +66,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>detours/detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Detours/detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -88,29 +88,39 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>detours/detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Detours/detours.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CLRHost.cpp" />
-    <ClCompile Include="ExportController.cpp" />
-    <ClCompile Include="FileManager.cpp" />
-    <ClCompile Include="il2cpp.cpp" />
-    <ClCompile Include="VRCLoader.cpp" />
+    <ClCompile Include="AtiRoNya.cpp" />
+    <ClCompile Include="Bridge\Array\Array.cpp" />
+    <ClCompile Include="Bridge\Assembly\Assembly.cpp" />
+    <ClCompile Include="Bridge\Class\Class.cpp" />
+    <ClCompile Include="Bridge\Metadata\Metadata.cpp" />
+    <ClCompile Include="Bridge\Method\Method.cpp" />
+    <ClCompile Include="Bridge\String\String.cpp" />
+    <ClCompile Include="Externals\MonoExternals.cpp" />
+    <ClCompile Include="Hooking\Hooks.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CLRHost.h" />
-    <ClInclude Include="detours\detours.h" />
-    <ClInclude Include="detours\detver.h" />
-    <ClInclude Include="detours\syelog.h" />
-    <ClInclude Include="Exports.h" />
-    <ClInclude Include="FileManager.h" />
-    <ClInclude Include="HookTypes.h" />
-    <ClInclude Include="il2cpp.h" />
-    <ClInclude Include="INetDomain.h" />
+    <ClInclude Include="AtiRoNya.h" />
+    <ClInclude Include="Bridge\Array\Array.h" />
+    <ClInclude Include="Bridge\Assembly\Assembly.h" />
+    <ClInclude Include="Bridge\Bridge.h" />
+    <ClInclude Include="Bridge\Class\Class.h" />
+    <ClInclude Include="Bridge\Metadata\Metadata.h" />
+    <ClInclude Include="Bridge\Method\Method.h" />
+    <ClInclude Include="Bridge\String\String.h" />
+    <ClInclude Include="Detours\detours.h" />
+    <ClInclude Include="Detours\detver.h" />
+    <ClInclude Include="Detours\syelog.h" />
+    <ClInclude Include="Externals\MonoExternals.h" />
+    <ClInclude Include="Hooking\Hooks.h" />
     <ClInclude Include="InternalHelpers.hpp" />
-    <ClInclude Include="NetHostControl.hpp" />
-    <ClInclude Include="VRCLoader.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="AtiRoNya.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

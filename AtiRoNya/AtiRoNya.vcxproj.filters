@@ -13,63 +13,86 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\detours">
-      <UniqueIdentifier>{bf109561-15d0-426d-a805-ec1d48490c8b}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CLRHost.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="il2cpp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="VRCLoader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="FileManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ExportController.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="CLRHost.h">
+    <ClInclude Include="AtiRoNya.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="HookTypes.h">
+    <ClInclude Include="Detours\detours.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="il2cpp.h">
+    <ClInclude Include="Detours\detver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="VRCLoader.h">
+    <ClInclude Include="Detours\syelog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="InternalHelpers.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hooking\Hooks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bridge\Bridge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bridge\Metadata\Metadata.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bridge\Assembly\Assembly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bridge\Class\Class.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bridge\Method\Method.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Externals\MonoExternals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bridge\String\String.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bridge\Array\Array.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AtiRoNya.cpp">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="detours\syelog.h">
-      <Filter>Header Files\detours</Filter>
-    </ClInclude>
-    <ClInclude Include="detours\detours.h">
-      <Filter>Header Files\detours</Filter>
-    </ClInclude>
-    <ClInclude Include="detours\detver.h">
-      <Filter>Header Files\detours</Filter>
-    </ClInclude>
-    <ClInclude Include="Exports.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FileManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="NetHostControl.hpp">
+    </ClCompile>
+    <ClCompile Include="Hooking\Hooks.cpp">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="INetDomain.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    </ClCompile>
+    <ClCompile Include="Bridge\Metadata\Metadata.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bridge\Assembly\Assembly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bridge\Class\Class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bridge\Method\Method.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Externals\MonoExternals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bridge\String\String.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Bridge\Array\Array.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="AtiRoNya.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

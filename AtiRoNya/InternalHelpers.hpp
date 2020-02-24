@@ -1,13 +1,6 @@
 #pragma once
 
-#include <stdio.h>
-#include <iostream>
-#include <windows.h>
-#include <fstream>
-#include <string>
-#include <filesystem>
-#include <queue>
-#include <functional>
+#include "AtiRoNya.h"
 
 class FileUtils {
 public:
@@ -50,7 +43,7 @@ public:
 
 		// Setup outputs
 		freopen_s(reinterpret_cast<FILE * *>(stdout), "CONOUT$", "w", stdout);
-		SetConsoleTitle("VRCLoader Debug Console");
+		SetConsoleTitle("AtiRoNya Debug Console");
 	}
 	static void DestroyConsole() {
 		if (!HasConsole())
@@ -63,9 +56,12 @@ public:
 		FreeConsole();
 	}
 
+	static const char* GetPrefix() {
+		return "[AtiRoNya] ";
+	}
 	static void Log(const char* text) {
 		if (!HasConsole())
 			return;
-		std::cout << text << std::endl;
+		std::cout << GetPrefix() << text << std::endl;
 	}
 };

@@ -3,6 +3,12 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Project specific
+*.dll
+packages/
+Output/
+
+
 # User-specific files
 *.suo
 *.user
